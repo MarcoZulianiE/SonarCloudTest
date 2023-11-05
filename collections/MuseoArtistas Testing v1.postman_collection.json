@@ -1,0 +1,852 @@
+{
+	"info": {
+		"_postman_id": "9123e3e1-774d-4998-ac7b-882d9c29c4ed",
+		"name": "MuseoArtistas Testing v1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear un Pais",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"newIdPais\",data.id);\r",
+							"tests[\"No genera error en el POST: Crear Pais\"] = responseCode.code === 201;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombrePais\": \"Colombia\",\r\n    \"coordenadas\": \"xxxxx\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/paises",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"paises"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un Pais 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"newIdPais2\",data.id);\r",
+							"tests[\"No genera error en el POST: Crear Pais\"] = responseCode.code === 201;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombrePais\": \"Paris\",\r\n    \"coordenadas\": \"yyyyy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/paises",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"paises"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un Museo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"newIdMuseo\", data.id);\r",
+							"tests[\"no genera error en el create Museo\"] = responseCode.code === 201;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"MOMA\",\r\n    \"direccion\": \"calle 45\",\r\n    \"total_obras_exhibidas\": 500,\r\n    \"ubicacion\": {\"id\": {{newIdPais}}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/Museos",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"Museos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un Museo 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"newIdMuseo2\", data.id);\r",
+							"tests[\"no genera error en el create Museo\"] = responseCode.code === 201;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Centro Pompidou\",\r\n    \"direccion\": \"calle 100\",\r\n    \"total_obras_exhibidas\": 100,\r\n    \"ubicacion\": {\"id\": {{newIdPais2}}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/Museos",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"Museos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Artista 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"newIdArtista\",data.id);\r",
+							"tests[\"No genera error en el POST\"] = responseCode.code === 201;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Carlos\",\r\n    \"imagen\":\"https://upload.wikimedia.org/wikipedia/commons/8/88/Albrecht_D%C3%BCrer%2C_Selbstbildnis_mit_26_Jahren_%28Prado%2C_Madrid%29.jpg\",\r\n    \"fechaNacimiento\":\"1910-12-12\",\r\n    \"fechaFallecimiento\":\"2000-12-12\",\r\n    \"lugarNacimiento\":{ \"id\":{{newIdPais}} },\r\n    \"lugarFallecimiento\":{ \"id\":{{newIdPais}} }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/artistas",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"artistas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Artista 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"newIdArtista2\",data.id);\r",
+							"tests[\"No genera error en el POST\"] = responseCode.code === 201;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Antonio\",\r\n    \"imagen\":\"https://www.ecured.cu/images/e/e0/Retratodelartistasinbarba.jpg\",\r\n    \"fechaNacimiento\":\"1895-10-12\",\r\n    \"fechaFallecimiento\":\"1960-03-05\",\r\n    \"lugarNacimiento\":{ \"id\":{{newIdPais2}} },\r\n    \"lugarFallecimiento\":{ \"id\":{{newIdPais2}} }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/artistas",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"artistas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Asociar un artista con un Museo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(responseBody);\r",
+							"var data = JSON.parse(responseBody);\r",
+							"tests[\"No generera error en el Post\"] = responseCode.code ===200;\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/Museos/{{newIdMuseo}}/artistas/{{newIdArtista}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"Museos",
+						"{{newIdMuseo}}",
+						"artistas",
+						"{{newIdArtista}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Asociar un artista inexistente con un museo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No asocia un museo con un artista inexistente\"] = responseCode.code===404;\r",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"ARTISTA NOT FOUND\");\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/Museos/{{newIdMuseo}}/artistas/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"Museos",
+						"{{newIdMuseo}}",
+						"artistas",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Asociar un artista con un Museo inexistente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No asocia un museo inexistente con un artista\"] = responseCode.code===404;\r",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"MUSEO NOT FOUND\");\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/Museos/0/artistas/{{newIdArtista}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"Museos",
+						"0",
+						"artistas",
+						"{{newIdArtista}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un Artista asociado con un Museo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(responseBody);\r",
+							"var data = JSON.parse(responseBody);\r",
+							"tests[\"No genera error en el get de un artista asociado a un museo\"] = responseCode.code ===200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/Museos/{{newIdMuseo}}/artistas/{{newIdArtista}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"Museos",
+						"{{newIdMuseo}}",
+						"artistas",
+						"{{newIdArtista}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un Artista inexistente asociado con un Museo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No realiza la busqueda cuando hay un artista inexistente\"] = responseCode.code ===404;\r",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"ARTISTA NOT FOUND\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/Museos/{{newIdMuseo}}/artistas/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"Museos",
+						"{{newIdMuseo}}",
+						"artistas",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un Artista no asociado a un Museo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No se puede obtener un museo que no esta asociado al artista\"] = responseCode.code === 412;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"El Artista no esta asociado con el Museo\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/Museos/{{newIdMuseo2}}/artistas/{{newIdArtista}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"Museos",
+						"{{newIdMuseo2}}",
+						"artistas",
+						"{{newIdArtista}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un libro que no esta asociado a un autor en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El libro no está asociado al autor\".\r\n\r\n**Código http esperado: 412**"
+			},
+			"response": []
+		},
+		{
+			"name": "Asociar Artistas a un Museo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No genera error en el Put\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n    \"id\":{{newIdArtista}},\n    \"nombre\":\"Carlos\",\n    \"fechaNacimiento\":\"1910-12-12\",\n    \"fechaFallecimiento\":\"2000-12-12\",\n    \"lugarNacimiento\":{ \"id\":{{newIdPais}} },\n    \"lugarFallecimiento\":{ \"id\":{{newIdPais}} }\n},\n{\n    \"id\":{{newIdArtista2}},\n    \"nombre\":\"Antonio\",\n    \"fechaNacimiento\":\"1895-10-12\",\n    \"fechaFallecimiento\":\"1960-03-05\",\n    \"lugarNacimiento\":{ \"id\":{{newIdPais2}} },\n    \"lugarFallecimiento\":{ \"id\":{{newIdPais2}} }\n}]"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/Museos/{{newIdMuseo}}/artistas",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"Museos",
+						"{{newIdMuseo}}",
+						"artistas"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nActualiza la lista de libros un autor existente.\r\n\r\nSe envía el Id en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Artistas asociados con un Museo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(responseBody)\r",
+							"var data = JSON.parse(responseBody)\r",
+							"tests[\"No genera error en el GetArtista\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/Museos/{{newIdMuseo}}/artistas",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"Museos",
+						"{{newIdMuseo}}",
+						"artistas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Desasociar un artista con un Museo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No generera error en el Delete\"] = responseCode.code ===204;\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/Museos/{{newIdMuseo}}/artistas/{{newIdArtista}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"Museos",
+						"{{newIdMuseo}}",
+						"artistas",
+						"{{newIdArtista}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Desasociar un artista con un Museo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No generera error en el Delete\"] = responseCode.code ===204;\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/Museos/{{newIdMuseo}}/artistas/{{newIdArtista2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"Museos",
+						"{{newIdMuseo}}",
+						"artistas",
+						"{{newIdArtista2}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Desasociar un artista inexistente con un Museo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No desasocia un artista inexistente con un museo\"] = responseCode.code ===404;\r",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"ARTISTA NOT FOUND\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/Museos/{{newIdMuseo}}/artistas/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"Museos",
+						"{{newIdMuseo}}",
+						"artistas",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Museo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code===204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/Museos/{{newIdMuseo}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"Museos",
+						"{{newIdMuseo}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Museo 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code===204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/Museos/{{newIdMuseo2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"Museos",
+						"{{newIdMuseo2}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar un Artista 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No genera error en el DELETE\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/artistas/{{newIdArtista}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"artistas",
+						"{{newIdArtista}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar un Artista 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No genera error en el DELETE\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/artistas/{{newIdArtista2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"artistas",
+						"{{newIdArtista2}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar el Pais 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No genera error en el DELETE\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/paises/{{newIdPais}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"paises",
+						"{{newIdPais}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar el Pais 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No genera error en el DELETE\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/paises/{{newIdPais2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"paises",
+						"{{newIdPais2}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

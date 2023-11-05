@@ -1,0 +1,890 @@
+{
+	"info": {
+		"_postman_id": "79ac98d7-5e61-4dc9-8569-e087a77c0984",
+		"name": "MovimientoArtisticoArtista Testingv1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear Movimiento1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"new_mov1\", data.id);\r",
+							"tests[\"no genera en el Post con los datos correctos\"] = responseCode.code===201;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"nombre\": \"Porfa\",\r\n\t\"fechaApogeo\": \"2000-11-20\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Movimiento2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"new_mov2\", data.id);\r",
+							"tests[\"no genera en el Post con los datos correctos\"] = responseCode.code===201;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"nombre\": \"Funciona\",\r\n\t\"fechaApogeo\": \"2004-10-19\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un Pais",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"new_id_pais\",data.id);\r",
+							"tests[\"No genera error en el POST: Crear Pais\"] = responseCode.code === 201;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombrePais\": \"Colombia\",\r\n    \"coordenadas\": \"xxxxx\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/paises",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"paises"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Artista1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"new_id_artista1\",data.id);\r",
+							"tests[\"No genera error en el POST\"] = responseCode.code === 201;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Leonardo\",\r\n    \"imagen\":\"https://upload.wikimedia.org/wikipedia/commons/8/88/Albrecht_D%C3%BCrer%2C_Selbstbildnis_mit_26_Jahren_%28Prado%2C_Madrid%29.jpg\",\r\n    \"fechaNacimiento\":\"1900-05-05\",\r\n    \"fechaFallecimiento\":\"1976-07-08\",\r\n    \"lugarNacimiento\":{ \"id\":{{new_id_pais}} },\r\n    \"lugarFallecimiento\":{ \"id\":{{new_id_pais}} }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/artistas",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"artistas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Artista2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"new_id_artista2\",data.id);\r",
+							"tests[\"No genera error en el POST\"] = responseCode.code === 201;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Javier\",\r\n    \"imagen\":\"https://www.ecured.cu/images/e/e0/Retratodelartistasinbarba.jpg\",\r\n    \"fechaNacimiento\":\"1910-05-05\",\r\n    \"fechaFallecimiento\":\"1976-05-08\",\r\n    \"lugarNacimiento\":{ \"id\":{{new_id_pais}} },\r\n    \"lugarFallecimiento\":{ \"id\":{{new_id_pais}} }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/artistas",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"artistas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Asociar un artista con un movimiento artistico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(responseBody);\r",
+							"var data = JSON.parse(responseBody);\r",
+							"tests[\"No generera error en el Post\"] = responseCode.code ===200;\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{new_mov1}}/artistas/{{new_id_artista1}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{new_mov1}}",
+						"artistas",
+						"{{new_id_artista1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Asociar un artista inexistente con un movimiento artistico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No asocia un movimiento con un artista inexistente\"] = responseCode.code===404;\r",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"El *artista* con el id dado no fue encontrado\");\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{new_mov1}}/artistas/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{new_mov1}}",
+						"artistas",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Asociar un artista con un movimiento artistico inexistente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No asocia un movimiento inexistente con un artista\"] = responseCode.code===404;\r",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"El *movimiento artistico* con el id dado no fue encontrado\");\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/0/artistas/{{new_id_artista1}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"0",
+						"artistas",
+						"{{new_id_artista1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Artistas asociados con un Movimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(responseBody)\r",
+							"var data = JSON.parse(responseBody)\r",
+							"tests[\"No genera error en el GetArtista\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{new_mov1}}/artistas",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{new_mov1}}",
+						"artistas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Artistas asociados a un MovimientoArtistico inexistente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No busca los artistas de un movimiento inexistente\"] = responseCode.code === 404;\r",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"El *movimiento artistico* con el id dado no fue encontrado\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/0/artistas",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"0",
+						"artistas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un Artista asociado con un MovimientoArtistico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(responseBody);\r",
+							"var data = JSON.parse(responseBody);\r",
+							"tests[\"No genera error en el get de un artista asociado a un movimiento\"] = responseCode.code ===200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{new_mov1}}/artistas/{{new_id_artista1}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{new_mov1}}",
+						"artistas",
+						"{{new_id_artista1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un Artista inexistente asociado con un MovimientoArtistico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No realiza la busqueda cuando hay un artista inexistente\"] = responseCode.code ===404;\r",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"El *artista* con el id dado no fue encontrado\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{new_mov1}}/artistas/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{new_mov1}}",
+						"artistas",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un Artista asociado con un MovimientoArtistico inexistente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No realiza la busqueda cuando hay un artista inexistente\"] = responseCode.code ===404;\r",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"El *movimiento artistico* con el id dado no fue encontrado\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/0/artistas/{{new_id_artista1}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"0",
+						"artistas",
+						"{{new_id_artista1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar la lista de artistas de un MovimientoArtistico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(responseBody);\r",
+							"var data = JSON.parse(responseBody);\r",
+							"tests[\"No genera error en el PUT\"] = responseCode.code ===200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\":{{new_id_artista2}}\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{new_mov1}}/artistas",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{new_mov1}}",
+						"artistas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar la lista de artistas de un MovimientoArtistico inexistente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No actualiza los artistas de un movimiento inexistente\"] = responseCode.code ===404;\r",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"El *movimiento artistico* con el id dado no fue encontrado\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\":{{new_id_artista2}}\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/0/artistas",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"0",
+						"artistas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Desasociar un artista con un movimiento artistico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No generera error en el Delete\"] = responseCode.code ===204;\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{new_mov1}}/artistas/{{new_id_artista1}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{new_mov1}}",
+						"artistas",
+						"{{new_id_artista1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Desasociar un artista con un movimiento artistico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No generera error en el Delete\"] = responseCode.code ===204;\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{new_mov1}}/artistas/{{new_id_artista2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{new_mov1}}",
+						"artistas",
+						"{{new_id_artista2}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Desasociar un artista inexistente con un movimiento artistico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No desasocia un artista inexistente con un movimiento artistico\"] = responseCode.code ===404;\r",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"El *artista* con el id dado no fue encontrado\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{new_mov1}}/artistas/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{new_mov1}}",
+						"artistas",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Desasociar un artista con un movimiento artistico inexistente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No desasocia un artista inexistente con un movimiento artistico\"] = responseCode.code ===404;\r",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"El *movimiento artistico* con el id dado no fue encontrado\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/0/artistas/{{new_id_artista1}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"0",
+						"artistas",
+						"{{new_id_artista1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Movimiento1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code===204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{new_mov1}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{new_mov1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Movimiento2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code===204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{new_mov2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{new_mov2}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar un Artista 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No genera error en el DELETE\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/artistas/{{new_id_artista1}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"artistas",
+						"{{new_id_artista1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar un Artista 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No genera error en el DELETE\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/artistas/{{new_id_artista2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"artistas",
+						"{{new_id_artista2}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar el Pais 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No genera error en el DELETE\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/paises/{{new_id_pais}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"paises",
+						"{{new_id_pais}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

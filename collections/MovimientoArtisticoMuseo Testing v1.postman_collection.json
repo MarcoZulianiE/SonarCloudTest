@@ -1,0 +1,811 @@
+{
+	"info": {
+		"_postman_id": "5db12586-21b1-4049-84c2-76212ab6f09d",
+		"name": "MovimientoArtisticoMuseo Testing v1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear un Pais",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"new_id_pais\",data.id);\r",
+							"tests[\"No genera error en el POST: Crear Pais\"] = responseCode.code === 201;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombrePais\": \"Colombia\",\r\n    \"coordenadas\": \"xxxxx\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/paises",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"paises"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear el Museo1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"museo1\",data.id);\r",
+							"tests[\"No genera error en el POST: Crear Pais\"] = responseCode.code === 201;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"JD\",\r\n    \"direccion\": \"james\",\r\n    \"salasExposicion\": [],\r\n    \"totalObrasExhibidas\": 0,\r\n    \"ubicacion\": { \"id\":{{new_id_pais}} }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/Museos",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"Museos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear el Museo2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"museo2\",data.id);\r",
+							"tests[\"No genera error en el POST: Crear Pais\"] = responseCode.code === 201;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"fsd\",\r\n    \"direccion\": \"jimmy\",\r\n    \"salasExposicion\": [],\r\n    \"totalObrasExhibidas\": 0,\r\n    \"ubicacion\": { \"id\":{{new_id_pais}} }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/Museos",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"Museos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un Movimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"mA1\", data.id);\r",
+							"tests[\"no genera en el Post con los datos correctos\"] = responseCode.code===201;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"nombre\": \"Bai2 chi1\",\r\n\t\"fechaApogeo\": \"2000-10-20\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Asociar un Museo con un MovimientoArtistico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(responseBody);\r",
+							"var data = JSON.parse(responseBody);\r",
+							"tests[\"No genera error en el POST para asociar un movimiento y museo\"] = responseCode.code===200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{mA1}}/museos/{{museo1}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{mA1}}",
+						"museos",
+						"{{museo1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Asociar un Museo inexistente con un MovimientoArtistico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No asocia un museo inexistente con un movimiento\"] = responseCode.code===404;\r",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"El *museo* con el id dado no fue encontrado\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{mA1}}/museos/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{mA1}}",
+						"museos",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Asociar un Museo con un MovimientoArtistico inexistente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No asocia un museo con un movimiento inexistente\"] = responseCode.code===404;\r",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"El *movimiento artistico* con el id dado no fue encontrado\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/0/museos/{{museo1}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"0",
+						"museos",
+						"{{museo1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Museos asociados a un MovimientoArtistico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(responseBody);\r",
+							"var data = JSON.parse(responseBody);\r",
+							"tests[\"No genera error al obtener los museos de un movimiento artistico\"] = responseCode.code===200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{mA1}}/museos",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{mA1}}",
+						"museos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Museos asociados a un MovimientoArtistico Inexistente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No busca museos de un movimiento inexistente\"] = responseCode.code===404;\r",
+							"tests[\"Mensaje correcto de eror\"] =responseBody.has(\"El *movimiento artistico* con el id dado no fue encontrado\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/0/museos",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"0",
+						"museos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un Museo asociado a un MovimientoArtistico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(responseBody);\r",
+							"var data = JSON.parse(responseBody);\r",
+							"tests[\"No genera error en el GET de un movimiento y museo\"] = responseCode.code===200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{mA1}}/museos/{{museo1}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{mA1}}",
+						"museos",
+						"{{museo1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un Museo asociado a un MovimientoArtistico inexistente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No hace la busqueda de museo de un movimiento inexistente\"] = responseCode.code===404;\r",
+							"tests[\"Mensaje correcto de eror\"] =responseBody.has(\"El *movimiento artistico* con el id dado no fue encontrado\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/0/museos/{{museo1}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"0",
+						"museos",
+						"{{museo1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un Museo inexistente asociado a un MovimientoArtistico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No hace la busqueda de museo de un movimiento inexistente\"] = responseCode.code===404;\r",
+							"tests[\"Mensaje correcto de eror\"] =responseBody.has(\"El *museo* con el id dado no fue encontrado\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{mA1}}/museos/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{mA1}}",
+						"museos",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar la lista de museos asociados a un movimiento artistico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(responseBody);\r",
+							"var data = JSON.parse(responseBody);\r",
+							"tests[\"No genera error al actualizar los museos de un movimiento\"] = responseCode.code ===200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\":{{museo2}}\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{mA1}}/museos",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{mA1}}",
+						"museos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar la lista de museos asociados a un movimiento artistico inexistente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No actualiza los museos de un movimiento inexistente\"] = responseCode.code ===404;\r",
+							"tests[\"Mensaje correcto de eror\"] =responseBody.has(\"El *movimiento artistico* con el id dado no fue encontrado\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\":{{museo2}}\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/0/museos",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"0",
+						"museos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Desasociar un Museo con un MovimientoArtistico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No genera error en el POST para asociar un movimiento y museo\"] = responseCode.code===204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{mA1}}/museos/{{museo1}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{mA1}}",
+						"museos",
+						"{{museo1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Desasociar un Museo2 con un MovimientoArtistico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No genera error en el POST para asociar un movimiento y museo\"] = responseCode.code===204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{mA1}}/museos/{{museo2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{mA1}}",
+						"museos",
+						"{{museo2}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Desasociar un Museo con un MovimientoArtistico inexistente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No desasocia un museo con un  movimiento inexistente\"] = responseCode.code===404;\r",
+							"tests[\"Mensaje correcto de eror\"] =responseBody.has(\"El *movimiento artistico* con el id dado no fue encontrado\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/0/museos/{{museo1}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"0",
+						"museos",
+						"{{museo1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Desasociar un Museo inexistente con un MovimientoArtistico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No desasocia un museo inexistente con un  movimiento\"] = responseCode.code===404;\r",
+							"tests[\"Mensaje correcto de eror\"] =responseBody.has(\"El *museo* con el id dado no fue encontrado\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{mA1}}/museos/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{mA1}}",
+						"museos",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Movimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code===204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{mA1}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{mA1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar el Museo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No genera error en el DELETE\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/Museos/{{museo1}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"Museos",
+						"{{museo1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar el Museo2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No genera error en el DELETE\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/Museos/{{museo2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"Museos",
+						"{{museo2}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar el Pais",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No genera error en el DELETE\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/paises/{{new_id_pais}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"paises",
+						"{{new_id_pais}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

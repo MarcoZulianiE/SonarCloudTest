@@ -1,0 +1,768 @@
+{
+	"info": {
+		"_postman_id": "04175e06-99a1-458e-b331-3acb7b5bde2d",
+		"name": "MovimientoArtisticoObra Testing v1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear Movimiento Artistico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"movi\", data.id);\r",
+							"tests[\"no genera en el Post con los datos correctos\"] = responseCode.code===201;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"nombre\": \"Ni3 de ma\",\r\n\t\"fechaApogeo\": \"2001-10-20\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Obra1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"obra1\", data.id);\r",
+							"tests[\"no genera en el Post con los datos correctos\"] = responseCode.code===201;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"andres\",\r\n    \"tipo\": \"inconsistente\",\r\n    \"descripcion\":\"hecho a medias\",\r\n    \"fechaPublicacion\":\"2011-09-11\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/obras",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"obras"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Obra2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"obra2\", data.id);\r",
+							"tests[\"no genera en el Post con los datos correctos\"] = responseCode.code===201;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"de milagro esto funciona\",\r\n    \"tipo\": \"inconsistente\",\r\n    \"descripcion\":\"hecho a medias\",\r\n    \"fechaPublicacion\":\"2001-09-11\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/obras",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"obras"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Obra Vacia",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"obraV\", data.id);\r",
+							"tests[\"no genera en el Post con los datos correctos\"] = responseCode.code===201;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"andy\",\r\n    \"tipo\": \"inconsistente\",\r\n    \"descripcion\":\"hecho a medias\",\r\n    \"fechaPublicacion\":\"2001-09-11\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/obras",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"obras"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Asociar una Obra a un Movimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(responseBody);\r",
+							"var data = JSON.parse(responseBody);\r",
+							"tests[\"No genera error al asociar una obra y movimiento\"] = responseCode.code===200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{movi}}/obras/{{obra1}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{movi}}",
+						"obras",
+						"{{obra1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Asociar una Obra inexistente a un Movimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No asocia una obra inexistente con un movimiento\"] = responseCode.code===404;\r",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"La *obra* con el id dado no fue encontrado\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{movi}}/obras/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{movi}}",
+						"obras",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Asociar una Obra a un Movimiento inexistente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No asocia una obra con un movimiento inexistente\"] = responseCode.code===404;\r",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"El *movimiento artistico* con el id dado no fue encontrado\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/0/obras/{{obra1}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"0",
+						"obras",
+						"{{obra1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar una Obra relacionada a un Movimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(responseBody);\r",
+							"var data = JSON.parse(responseBody);\r",
+							"tests[\"No genera error al buscar obrasa de un movimiento\"] = responseCode.code===200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{movi}}/obras/{{obra1}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{movi}}",
+						"obras",
+						"{{obra1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar una Obra Inexistente relacionada a un Movimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No busca moviiento relacionado a una obra inexistente\"] = responseCode.code===404;\r",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"La *obra* con el id dado no fue encontrado\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{movi}}/obras/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{movi}}",
+						"obras",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar una Obra relacionada a un Movimiento inexistente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No busca moviiento relacionado a una obra inexistente\"] = responseCode.code===404;\r",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"El *movimiento artistico* con el id dado no fue encontrado\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/0/obras/{{obra1}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"0",
+						"obras",
+						"{{obra1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Obras relacionadas a un Movimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(responseBody);\r",
+							"var data = JSON.parse(responseBody);\r",
+							"tests[\"No genera error al buscar obrasa de un movimiento\"] = responseCode.code===200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{movi}}/obras",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{movi}}",
+						"obras"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Obras relacionadas a un Movimiento inexistente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No busca obras de un movimiento inexistente\"] = responseCode.code===404;\r",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"El *movimiento artistico* con el id dado no fue encontrado\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/0/obras",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"0",
+						"obras"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Obras relacionadas a un Movimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(responseBody);\r",
+							"var data = JSON.parse(responseBody);\r",
+							"tests[\"No genera error al buscar obrasa de un movimiento\"] = responseCode.code===200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\":{{obra2}}\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{movi}}/obras",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{movi}}",
+						"obras"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Obras relacionadas a un Movimiento inexistente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No actualiza obras de un movimiento existente\"] = responseCode.code===404;\r",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"El *movimiento artistico* con el id dado no fue encontrado\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\":{{obra2}}\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/0/obras",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"0",
+						"obras"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Obra1 para que no este relacionada",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(responseBody);\r",
+							"var data = JSON.parse(responseBody);\r",
+							"tests[\"No genera error en el UPDATE\"] = responseCode.code===200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"id\":{{obraV}}\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/obras/{{obra1}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"obras",
+						"{{obra1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Obra2 para que no este relacionada",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(responseBody);\r",
+							"var data = JSON.parse(responseBody);\r",
+							"tests[\"No genera error en el UPDATE\"] = responseCode.code===200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"id\":{{obraV}}\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/obras/{{obra2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"obras",
+						"{{obra2}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Movimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code===204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/movimientoartisticos/{{movi}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"movimientoartisticos",
+						"{{movi}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Obra1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No genera error en el DELETE\"] = responseCode.code===204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/obras/{{obra1}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"obras",
+						"{{obra1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Obra Vacia",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No genera error en el DELETE\"] = responseCode.code===204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/obras/{{obraV}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"obras",
+						"{{obraV}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Obra2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"No genera error en el DELETE\"] = responseCode.code===204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"de milagro esto funciona\",\r\n    \"tipo\": \"inconsistente\",\r\n    \"descripcion\":\"hecho a medias\",\r\n    \"fechaDescripcion\":\"2001-09-11\",\r\n    \"artista\":{{anuel}},\r\n    \"museo\":{{mus}}\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/api/obras/{{obra2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"api",
+						"obras",
+						"{{obra2}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,94 @@
+--PAISES
+insert into PAIS_ENTITY (ID, NOMBRE_PAIS, COORDENADAS_PAIS, IMAGEN) values (1,'Francia', 47.2215999, 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%2C_2020%E2%80%93present%29.svg/270px-Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%2C_2020%E2%80%93present%29.svg.png');
+insert into PAIS_ENTITY (ID, nombre_pais, coordenadas_pais, imagen) values (2, 'Japon', 34.8148172, 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/200px-Flag_of_Japan.svg.png');
+insert into PAIS_ENTITY (ID, nombre_pais, coordenadas_pais, imagen) values (3, 'Estados Unidos', 26.6654996, 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png');
+insert into PAIS_ENTITY (ID, nombre_pais, coordenadas_pais, imagen) values (4, 'Países Bajos', 39.1646273, 'https://www.paisesbajosytu.nl/binaries/medium/content/gallery/netherlandsandyou/content-afbeeldingen/algemeen/vlag-nederland.png');
+
+--CIUDADES
+insert into CIUDAD_ENTITY (NOMBRE_CIUDAD , COORDENADAS_CIUDAD , imagen, pais_id) values ('Tokyo', 4.2552114, 'https://ep01.epimg.net/elviajero/imagenes/2020/04/30/actualidad/1588237365_988791_1588237524_noticia_normal.jpg', 2);
+insert into CIUDAD_ENTITY (NOMBRE_CIUDAD , COORDENADAS_CIUDAD , imagen, pais_id) values ('Kioto', 34.552114, 'http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcT2Ccg6pJoOfRBmyHGJGqclC0oABkz3SytnLDwR5efz9Wdn_LxK8BEhm2rVQPTR', 2);
+insert into CIUDAD_ENTITY (NOMBRE_CIUDAD , COORDENADAS_CIUDAD , imagen, pais_id) values ('Yokohama', 25.521143, 'http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcRQsRbg4cilJZTuGQDzU-Ei51xmukjGYaQ_rrAH-vEcvFiCO61N81f94PlXHTw7', 2);
+insert into CIUDAD_ENTITY (NOMBRE_CIUDAD , COORDENADAS_CIUDAD , imagen, pais_id) values ('Osaka', 11.114323, 'https://lh3.googleusercontent.com/P-_jixwsHvt-etToEWPX7oLdASYf2qYfGZX-Hv8PR5ubUb9WvnhQOkW8LfxkXuSM', 2);
+insert into CIUDAD_ENTITY (NOMBRE_CIUDAD , COORDENADAS_CIUDAD , imagen, pais_id) values ('Nueva York', 37.521142, 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Panorama_clip3.jpg/368px-Panorama_clip3.jpg', 3);
+insert into CIUDAD_ENTITY (NOMBRE_CIUDAD , COORDENADAS_CIUDAD , imagen, pais_id) values ('Los Ángeles', 10.323142, 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/LA_Skyline_Mountains2.jpg/368px-LA_Skyline_Mountains2.jpg', 3);
+insert into CIUDAD_ENTITY (NOMBRE_CIUDAD , COORDENADAS_CIUDAD , imagen, pais_id) values ('Chicago', 5.2552114, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/2008-06-10_3000x1000_chicago_skyline.jpg/368px-2008-06-10_3000x1000_chicago_skyline.jpg', 3);
+insert into CIUDAD_ENTITY (NOMBRE_CIUDAD , COORDENADAS_CIUDAD , imagen, pais_id) values ('Houston', 89.552114, 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Houstontexas1danielarizpe.jpg/368px-Houstontexas1danielarizpe.jpg', 3);
+insert into CIUDAD_ENTITY (NOMBRE_CIUDAD , COORDENADAS_CIUDAD , imagen, pais_id) values ('Phoenix', 16.552114, 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Phoenix_skyline.jpg/368px-Phoenix_skyline.jpg', 3);
+insert into CIUDAD_ENTITY (NOMBRE_CIUDAD , COORDENADAS_CIUDAD , imagen, pais_id) values ('Ámsterdam', 12.552114, 'http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcRNnLnKHdIzBRCrMlYHgkmu1jRFgP1kPvZG8INS8dvOFgoyxm2TsAvmHuCBoIpS', 4);
+insert into CIUDAD_ENTITY (NOMBRE_CIUDAD , COORDENADAS_CIUDAD , imagen, pais_id) values ('Róterdam', 45.552114, 'http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcQhgW44cbkw_IyJqnhEHtNCLxUULIRxe70DttjROU9QrVVBgmx62eNAO51Pbw1r', 4);
+insert into CIUDAD_ENTITY (NOMBRE_CIUDAD , COORDENADAS_CIUDAD , imagen, pais_id) values ('La Haya', 45.552114, 'http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcTqVHd_BLv5yOr3SqmhomAEexO2MtsGLfjvJ2QGWiAg33HxTcIV1KnDxQA4wOOC', 4);
+insert into CIUDAD_ENTITY (NOMBRE_CIUDAD , COORDENADAS_CIUDAD , imagen, pais_id) values ('París', 45.552114, 'http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQU0lsZIAGT6rbUwWSSbtlbmWXts_4jTvR-THWTarBSGcg8T4pTXMa66egbmris', 1);
+insert into CIUDAD_ENTITY (NOMBRE_CIUDAD , COORDENADAS_CIUDAD , imagen, pais_id) values ('Marsella', 45.552114, 'http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQNo4blJGcwqeNNCEdc6fXzKQ8Y-9wKE8P4EnFKQHjau2sVJg3aVKdRT34nS50r', 1);
+insert into CIUDAD_ENTITY (NOMBRE_CIUDAD , COORDENADAS_CIUDAD , imagen, pais_id) values ('Lyon', 45.552114, 'https://a.cdn-hotels.com/gdcs/production140/d1329/4ff90d12-f631-4df5-be5f-162545ce8863.jpg?impolicy=fcrop&w=800&h=533&q=medium', 1);
+
+--ARTISTAS
+insert into ARTISTA_ENTITY (ID, NOMBRE, IMAGEN, FECHA_NACIMIENTO, FECHA_FALLECIMIENTO, LUGAR_NACIMIENTO_ID, LUGAR_FALLECIMIENTO_ID) values (1, 'Paul Cézanne', 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Cezanne_-_Self-portrait_-_1879-80.jpg/330px-Cezanne_-_Self-portrait_-_1879-80.jpg', '1839-01-19', '1906-10-22', 1, 1);
+insert into ARTISTA_ENTITY (ID, NOMBRE, IMAGEN, FECHA_NACIMIENTO, FECHA_FALLECIMIENTO, LUGAR_NACIMIENTO_ID, LUGAR_FALLECIMIENTO_ID) values (2, 'Vincent van Gogh', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project_%28454045%29.jpg/800px-Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project_%28454045%29.jpg', '1853-03-30', '1890-07-29', 4, 1);
+insert into ARTISTA_ENTITY (ID, NOMBRE, IMAGEN, FECHA_NACIMIENTO, FECHA_FALLECIMIENTO, LUGAR_NACIMIENTO_ID, LUGAR_FALLECIMIENTO_ID) values (3, 'Paul Gauguin', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Paul_Gauguin_111.jpg/300px-Paul_Gauguin_111.jpg', '1848-06-07', '1903-05-07', 1, 1);
+
+--MOVIMIENTOS
+insert into MOVIMIENTO_ARTISTICO_ENTITY (id, nombre, fecha_apogeo, imagen, descripcion) values (1, 'Postimpresionismo', '1910-01-01', 'https://theartwolf.com/wp-content/uploads/2021/05/25-postimpressionist-paintings.jpg', 'Se aplica a los estilos pictóricos a finales del siglo XIX y principios del XX posteriores al impresionismo. Sus exponentes reaccionaron contra el deseo de reflejar fielmente la naturaleza y presentaron una visión más subjetiva del mundo.');
+insert into MOVIMIENTO_ARTISTICO_ENTITY (id, nombre, fecha_apogeo, imagen, descripcion) values (2, 'Escuela de Pont-Aven', '1850-01-01', 'https://mymodernmet.com/wp/wp-content/uploads/2022/01/emile-bernard-paintings-10.jpg', 'Escuela de Pont-Aven se refiere a obras de arte que toman su nombre de la región de Pont-Aven y sus alrededores, de la que toman su iconografía.');
+insert into MOVIMIENTO_ARTISTICO_ENTITY (id, nombre, fecha_apogeo, imagen, descripcion) values (3, 'Simbolismo', '1885-01-01', 'https://www.diarioextra.com/files/Dnews/images/detail/402513_colla.jpg', 'El simbolismo fue uno de los movimientos literarios más importantes de finales del siglo XIX. Tiene su origen en Francia y en Bélgica.');
+insert into MOVIMIENTO_ARTISTICO_ENTITY (id, nombre, fecha_apogeo, imagen, descripcion) values (4, 'Sintetismo', '1880-01-01', 'https://www.cronica.com.ar/__export/1602116425322/sites/cronica/img/2020/10/07/religiones_crop1602116290960.jpg_543804098.jpg', 'Sintetismo es un término utilizado por artistas postimpresionistas como Paul Gauguin, Emile Bernard y Louis Anquetin para distinguir su trabajo del impresionismo.');
+insert into MOVIMIENTO_ARTISTICO_ENTITY (id, nombre, fecha_apogeo, imagen, descripcion) values (5, 'Cloisonismo', '1889-01-01', 'https://m.media-amazon.com/images/I/81ehrZZhxCL._AC_SX522_.jpg', 'Es un estilo de pintura postimpresionista donde se utilizan colores planos, en contornos oscuros silueteados perfectamente delimitados. Se caracteriza por su efecto decorativo, su calidad formal.');
+insert into MOVIMIENTO_ARTISTICO_ENTITY (id, nombre, fecha_apogeo, imagen, descripcion) values (6, 'Impresionismo', '1874-01-01', 'https://mott.pe/noticias/wp-content/uploads/2018/01/principales-pintores-representantes-del-impresionismo-DESTACADA.jpg', 'El impresionismo es un movimiento artístico1​ inicialmente definido para la pintura impresionista, a partir del comentario despectivo2 de un crítico de arte (Louis Leroy).');
+insert into MOVIMIENTO_ARTISTICO_ENTITY (id, nombre, fecha_apogeo, imagen, descripcion) values (7, 'Primitivismo', '1890-01-01', 'https://artelista.s3.amazonaws.com/obras/big/8/8/3/1113671945223017.jpg', 'El primitivismo es un movimiento artístico surgido en Rusia y defendido por algunos pintores de la Sota de Diamantes, que privilegia las formas ingenuas y primitivas del arte.');
+
+--ARTSTAS-MOVIMIENTOS
+insert into ARTISTA_ENTITY_MOVIMIENTOS (ARTISTAS_ID, MOVIMIENTOS_ID) values (1, 1);
+insert into ARTISTA_ENTITY_MOVIMIENTOS (ARTISTAS_ID, MOVIMIENTOS_ID) values (2, 1);
+insert into ARTISTA_ENTITY_MOVIMIENTOS (ARTISTAS_ID, MOVIMIENTOS_ID) values (3, 1);
+insert into ARTISTA_ENTITY_MOVIMIENTOS (ARTISTAS_ID, MOVIMIENTOS_ID) values (3, 2);
+insert into ARTISTA_ENTITY_MOVIMIENTOS (ARTISTAS_ID, MOVIMIENTOS_ID) values (3, 3);
+insert into ARTISTA_ENTITY_MOVIMIENTOS (ARTISTAS_ID, MOVIMIENTOS_ID) values (3, 4);
+insert into ARTISTA_ENTITY_MOVIMIENTOS (ARTISTAS_ID, MOVIMIENTOS_ID) values (3, 5);
+insert into ARTISTA_ENTITY_MOVIMIENTOS (ARTISTAS_ID, MOVIMIENTOS_ID) values (3, 6);
+insert into ARTISTA_ENTITY_MOVIMIENTOS (ARTISTAS_ID, MOVIMIENTOS_ID) values (3, 7);
+
+--MUSEOS
+insert into MUSEO_ENTITY (ID, NOMBRE, DIRECCION, IMG, TOTAL_OBRAS_EXHIBIDAS, UBICACION_ID) values (1, 'Musée de l`Orangerie', 'Jardin Tuileries, 75001 Paris', 'https://cdn.pariscityvision.com/library/image/5123.jpg', 1, 1);
+insert into MUSEO_ENTITY (ID, NOMBRE, DIRECCION, IMG, TOTAL_OBRAS_EXHIBIDAS, UBICACION_ID) values (2, 'Museum of Western Art', '7-7 Uenokoen, Taito City, Tokyo 110-0007', 'https://www.inexhibit.com/wp-content/uploads/2016/09/National-Museum-of-Western-Art-Tokyo-Le-Corbusier-3.jpg', 2, 2);
+insert into MUSEO_ENTITY (ID, NOMBRE, DIRECCION, IMG, TOTAL_OBRAS_EXHIBIDAS, UBICACION_ID) values (3, 'MoMA', '11 W 53rd St, New York, NY 10019', 'https://viajes.nationalgeographic.com.es/medio/2020/04/20/moma_f4b7f033_1254x836.jpg', 1, 3);
+insert into MUSEO_ENTITY (ID, NOMBRE, DIRECCION, IMG, TOTAL_OBRAS_EXHIBIDAS, UBICACION_ID) values (4, 'The Phillips Collection', '1600 21st St NW, Washington, DC 20009', 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/The_Phillips_Collection.JPG/280px-The_Phillips_Collection.JPG', 1, 3);
+insert into MUSEO_ENTITY (ID, NOMBRE, DIRECCION, IMG, TOTAL_OBRAS_EXHIBIDAS, UBICACION_ID) values (5, 'Chrysler Museum of Art', 'Chrysler Museum of Art, 1 Memorial Pl, Norfolk, VA 23510', 'https://upload.wikimedia.org/wikipedia/commons/2/2e/Chryslermuseum.jpg', 1, 3);
+insert into MUSEO_ENTITY (ID, NOMBRE, DIRECCION, IMG, TOTAL_OBRAS_EXHIBIDAS, UBICACION_ID) values (6, 'Van Gogh Museum', 'Museumplein 6, 1071 DJ Amsterdam', 'https://img.itinari.com/activity/images/original/34eb52f3-e4b5-49a2-b6f9-e59fd515c9ee-istock-523833560.jpg?ch=DPR&dpr=2.625&w=1200&h=800&s=d1ee1a47146fe28d94b958c9553b9814', 1, 4);
+
+--MUSEOS-MOVIMIENTOS
+insert into MOVIMIENTO_ARTISTICO_ENTITY_MUSEOS (MUSEOS_ID, MOVIMIENTOS_ID) values (1, 1);
+insert into MOVIMIENTO_ARTISTICO_ENTITY_MUSEOS (MUSEOS_ID, MOVIMIENTOS_ID) values (2, 1);
+insert into MOVIMIENTO_ARTISTICO_ENTITY_MUSEOS (MUSEOS_ID, MOVIMIENTOS_ID) values (3, 1);
+insert into MOVIMIENTO_ARTISTICO_ENTITY_MUSEOS (MUSEOS_ID, MOVIMIENTOS_ID) values (4, 1);
+insert into MOVIMIENTO_ARTISTICO_ENTITY_MUSEOS (MUSEOS_ID, MOVIMIENTOS_ID) values (5, 1);
+insert into MOVIMIENTO_ARTISTICO_ENTITY_MUSEOS (MUSEOS_ID, MOVIMIENTOS_ID) values (6, 1);
+insert into MOVIMIENTO_ARTISTICO_ENTITY_MUSEOS (MUSEOS_ID, MOVIMIENTOS_ID) values (4, 2);
+insert into MOVIMIENTO_ARTISTICO_ENTITY_MUSEOS (MUSEOS_ID, MOVIMIENTOS_ID) values (5, 3);
+insert into MOVIMIENTO_ARTISTICO_ENTITY_MUSEOS (MUSEOS_ID, MOVIMIENTOS_ID) values (6, 4);
+insert into MOVIMIENTO_ARTISTICO_ENTITY_MUSEOS (MUSEOS_ID, MOVIMIENTOS_ID) values (5, 5);
+insert into MOVIMIENTO_ARTISTICO_ENTITY_MUSEOS (MUSEOS_ID, MOVIMIENTOS_ID) values (6, 6);
+insert into MOVIMIENTO_ARTISTICO_ENTITY_MUSEOS (MUSEOS_ID, MOVIMIENTOS_ID) values (6, 7);
+insert into MOVIMIENTO_ARTISTICO_ENTITY_MUSEOS (MUSEOS_ID, MOVIMIENTOS_ID) values (6, 3);
+
+--MUSEOS-ARTISTAS
+insert into ARTISTA_ENTITY_MUSEOS (MUSEOS_ID, ARTISTAS_ID) values (1, 1);
+insert into ARTISTA_ENTITY_MUSEOS (MUSEOS_ID, ARTISTAS_ID) values (2, 2);
+insert into ARTISTA_ENTITY_MUSEOS (MUSEOS_ID, ARTISTAS_ID) values (3, 3);
+insert into ARTISTA_ENTITY_MUSEOS (MUSEOS_ID, ARTISTAS_ID) values (4, 1);
+insert into ARTISTA_ENTITY_MUSEOS (MUSEOS_ID, ARTISTAS_ID) values (5, 1);
+insert into ARTISTA_ENTITY_MUSEOS (MUSEOS_ID, ARTISTAS_ID) values (6, 1);
+insert into ARTISTA_ENTITY_MUSEOS (MUSEOS_ID, ARTISTAS_ID) values (4, 1);
+insert into ARTISTA_ENTITY_MUSEOS (MUSEOS_ID, ARTISTAS_ID) values (5, 2);
+insert into ARTISTA_ENTITY_MUSEOS (MUSEOS_ID, ARTISTAS_ID) values (6, 2);
+insert into ARTISTA_ENTITY_MUSEOS (MUSEOS_ID, ARTISTAS_ID) values (6, 3);
+
+--OBRAS
+insert into OBRA_ENTITY (ID, NOMBRE, TIPO, DESCRIPCION, FECHA_PUBLICACION, IMAGEN, ARTISTA_ID, MOVIMIENTO_ID, MUSEO_ID) values (1, 'Bather and Rocks', 'Oleo sobre Lienzo', 'DESCRIPCION', '1860-01-01', 'https://lh3.googleusercontent.com/6hPDKVcWt5mnElOAWLw7Gp-3CjcPhIR5c9iROwqRtBzuXgvZB8vDGb_FwdFdy4e6', 1, 1, 5);
+insert into OBRA_ENTITY (ID, NOMBRE, TIPO, DESCRIPCION, FECHA_PUBLICACION, IMAGEN, ARTISTA_ID, MOVIMIENTO_ID, MUSEO_ID) values (2, 'Self-Portrait', 'Oleo sobre Lienzo', 'DESCRIPCION', '1880-01-01', 'https://www.reprodart.com/kunst/paul_cezanne/cezanne_selbstbildnis.jpg', 1, 1, 4);
+insert into OBRA_ENTITY (ID, NOMBRE, TIPO, DESCRIPCION, FECHA_PUBLICACION, IMAGEN, ARTISTA_ID, MOVIMIENTO_ID, MUSEO_ID) values (3, 'Milk Can and Apples', 'Oleo sobre Lienzo', 'DESCRIPCION', '1880-01-01', 'https://www.moma.org/media/W1siZiIsIjQ1NzQ0NyJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg?sha=1cbeafb10489360d', 1, 1, 3);
+insert into OBRA_ENTITY (ID, NOMBRE, TIPO, DESCRIPCION, FECHA_PUBLICACION, IMAGEN, ARTISTA_ID, MOVIMIENTO_ID, MUSEO_ID) values (4, 'The Bare Trees at Jas de Bouffan', 'Oleo sobre Lienzo', 'DESCRIPCION', '1886-01-01', 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Paul_C%C3%A9zanne_-_The_Bare_Trees_at_Jas_de_Bouffan_-_Google_Art_Project.jpg', 1, 1, 2);
+insert into OBRA_ENTITY (ID, NOMBRE, TIPO, DESCRIPCION, FECHA_PUBLICACION, IMAGEN, ARTISTA_ID, MOVIMIENTO_ID, MUSEO_ID) values (5, 'Pot and Soup Tureen', 'Acuarela en Papel', 'DESCRIPCION', '1890-01-01', 'https://c8.alamy.com/comp/DNTAAF/paul-cezanne-pot-and-soup-tureen-1888-1890-pencil-and-watercolor-on-DNTAAF.jpg', 1, 1, 2);
+insert into OBRA_ENTITY (ID, NOMBRE, TIPO, DESCRIPCION, FECHA_PUBLICACION, IMAGEN, ARTISTA_ID, MOVIMIENTO_ID, MUSEO_ID) values (6, 'Portrait of Madame Cézanne', 'Oleo sobre Lienzo', 'DESCRIPCION', '1890-01-01', 'https://upload.wikimedia.org/wikipedia/commons/f/f4/Paul_C%C3%A9zanne_-_Portrait_de_Madame_C%C3%A9zanne_%28Orangerie%29.jpg', 1, 1, 1);
+insert into OBRA_ENTITY (ID, NOMBRE, TIPO, DESCRIPCION, FECHA_PUBLICACION, IMAGEN, ARTISTA_ID, MOVIMIENTO_ID, MUSEO_ID) values (7, 'The cottage', 'Paisaje', 'DESCRIPCION', '1885-05-01', 'https://www.reprodart.com/kunst/vincent_van_gogh/bauernhaus.jpg', 2, 1, 6);
+insert into OBRA_ENTITY (ID, NOMBRE, TIPO, DESCRIPCION, FECHA_PUBLICACION, IMAGEN, ARTISTA_ID, MOVIMIENTO_ID, MUSEO_ID) values (8, 'Head of a woman', 'Pintura', 'DESCRIPCION', '1885-03-01', 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Vincent_van_Gogh_-_Head_of_a_woman_-_Google_Art_Project_%285753528%29.jpg', 2, 1, 6);
+insert into OBRA_ENTITY (ID, NOMBRE, TIPO, DESCRIPCION, FECHA_PUBLICACION, IMAGEN, ARTISTA_ID, MOVIMIENTO_ID, MUSEO_ID) values (9, 'Landscape of Brittany', 'Pintura', 'DESCRIPCION', '1888-01-01', 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Paul_Gauguin_-_Landscape_of_Brittany_-_Google_Art_Project.jpg', 3, 1, 2);
+insert into OBRA_ENTITY (ID, NOMBRE, TIPO, DESCRIPCION, FECHA_PUBLICACION, IMAGEN, ARTISTA_ID, MOVIMIENTO_ID, MUSEO_ID) values (10, 'The Loss of Virginity', 'Pintura', 'DESCRIPCION', '1890-01-01', 'https://upload.wikimedia.org/wikipedia/commons/5/5e/Paul_Gauguin%2C_The_Loss_of_Virginity.JPG', 3, 7, 5);

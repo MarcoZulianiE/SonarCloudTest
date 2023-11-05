@@ -1,0 +1,113 @@
+--PAISES
+insert into PAIS_ENTITY (nombre_pais, coordenadas_pais, imagen) values ('Turkmenistan', 39.1646273, 'http://dummyimage.com/165x100.png/cc0000/ffffff');
+insert into PAIS_ENTITY (nombre_pais, coordenadas_pais, imagen) values ('Sri Lanka', 9.4015239, 'http://dummyimage.com/164x100.png/dddddd/000000');
+insert into PAIS_ENTITY (nombre_pais, coordenadas_pais, imagen) values ('Uganda', 0.7013707, 'http://dummyimage.com/198x100.png/cc0000/ffffff');
+insert into PAIS_ENTITY (nombre_pais, coordenadas_pais, imagen) values ('Russia', 52.5916842, 'http://dummyimage.com/185x100.png/dddddd/000000');
+insert into PAIS_ENTITY (nombre_pais, coordenadas_pais, imagen) values ('China', 44.5436259, 'http://dummyimage.com/238x100.png/cc0000/ffffff');
+insert into PAIS_ENTITY (nombre_pais, coordenadas_pais, imagen) values ('Georgia', 41.3298054, 'http://dummyimage.com/137x100.png/dddddd/000000');
+insert into PAIS_ENTITY (nombre_pais, coordenadas_pais, imagen) values ('Peru', -14.82087, 'http://dummyimage.com/229x100.png/cc0000/ffffff');
+insert into PAIS_ENTITY (nombre_pais, coordenadas_pais, imagen) values ('Brazil', -21.0106742, 'http://dummyimage.com/194x100.png/5fa2dd/ffffff');
+insert into PAIS_ENTITY (nombre_pais, coordenadas_pais, imagen) values ('Indonesia', -6.9098723, 'http://dummyimage.com/134x100.png/ff4444/ffffff');
+insert into PAIS_ENTITY (nombre_pais, coordenadas_pais, imagen) values ('Portugal', 32.6455862, 'http://dummyimage.com/234x100.png/cc0000/ffffff');
+
+--CIUDADES
+insert into CIUDAD_ENTITY (NOMBRE_CIUDAD , COORDENADAS_CIUDAD , imagen, pais_id) values ('Andrézieux-Bouthéon', 4.2552114, 'http://dummyimage.com/246x100.png/dddddd/000000', 7);
+insert into CIUDAD_ENTITY (NOMBRE_CIUDAD , COORDENADAS_CIUDAD , imagen, pais_id) values ('Oele', 115.165807, 'http://dummyimage.com/144x100.png/ff4444/ffffff', 7);
+insert into CIUDAD_ENTITY (NOMBRE_CIUDAD , COORDENADAS_CIUDAD , imagen, pais_id) values ('Rasskazovo', 41.7631303, 'http://dummyimage.com/236x100.png/dddddd/000000', 6);
+insert into CIUDAD_ENTITY (NOMBRE_CIUDAD , COORDENADAS_CIUDAD , imagen, pais_id) values ('São Pedro', -9.3809443, 'http://dummyimage.com/221x100.png/5fa2dd/ffffff', 6);
+insert into CIUDAD_ENTITY (NOMBRE_CIUDAD , COORDENADAS_CIUDAD , imagen, pais_id) values ('Sangongqiao', 109.654991, 'http://dummyimage.com/219x100.png/dddddd/000000', 5);
+insert into CIUDAD_ENTITY (NOMBRE_CIUDAD , COORDENADAS_CIUDAD , imagen, pais_id) values ('Vanderbijlpark', 28.0645967, 'http://dummyimage.com/158x100.png/dddddd/000000', 5);
+insert into CIUDAD_ENTITY (NOMBRE_CIUDAD , COORDENADAS_CIUDAD , imagen, pais_id) values ('Yambol', 26.5331057, 'http://dummyimage.com/154x100.png/5fa2dd/ffffff', 4);
+insert into CIUDAD_ENTITY (NOMBRE_CIUDAD , COORDENADAS_CIUDAD , imagen, pais_id) values ('La Paz', -73.57585, 'http://dummyimage.com/113x100.png/dddddd/000000', 4);
+insert into CIUDAD_ENTITY (NOMBRE_CIUDAD , COORDENADAS_CIUDAD , imagen, pais_id) values ('Tessalit', 0.9910298, 'http://dummyimage.com/105x100.png/ff4444/ffffff', 3);
+insert into CIUDAD_ENTITY (NOMBRE_CIUDAD , COORDENADAS_CIUDAD , imagen, pais_id) values ('Andros Town', -77.7852575, 'http://dummyimage.com/249x100.png/dddddd/000000', 2);
+
+--ARTISTAS
+insert into ARTISTA_ENTITY (nombre, imagen, fecha_Nacimiento, fecha_Fallecimiento, lugar_Nacimiento_id, lugar_Fallecimiento_id) values ('Cassie Paver', 'http://dummyimage.com/164x100.png/ff4444/ffffff', '1969-03-24', '1963-07-05', 2, 1);
+insert into ARTISTA_ENTITY (nombre, imagen, fecha_Nacimiento, fecha_Fallecimiento, lugar_Nacimiento_id, lugar_Fallecimiento_id) values ('Porter Connah', 'http://dummyimage.com/229x100.png/dddddd/000000', '1951-12-11', '2009-11-28', 3, 4);
+insert into ARTISTA_ENTITY (nombre, imagen, fecha_Nacimiento, fecha_Fallecimiento, lugar_Nacimiento_id, lugar_Fallecimiento_id) values ('Alla Defew', 'http://dummyimage.com/125x100.png/dddddd/000000', '1975-05-27', '1963-01-19', 1, 7);
+insert into ARTISTA_ENTITY (nombre, imagen, fecha_Nacimiento, fecha_Fallecimiento, lugar_Nacimiento_id, lugar_Fallecimiento_id) values ('Frances Gooder', 'http://dummyimage.com/138x100.png/cc0000/ffffff', '1972-11-05', '1970-01-18', 1, 4);
+insert into ARTISTA_ENTITY (nombre, imagen, fecha_Nacimiento, fecha_Fallecimiento, lugar_Nacimiento_id, lugar_Fallecimiento_id) values ('Jesse Wethey', 'http://dummyimage.com/204x100.png/5fa2dd/ffffff', '1959-10-29', '2019-04-30', 4, 4);
+insert into ARTISTA_ENTITY (nombre, imagen, fecha_Nacimiento, fecha_Fallecimiento, lugar_Nacimiento_id, lugar_Fallecimiento_id) values ('Teriann Lightfoot', 'http://dummyimage.com/111x100.png/dddddd/000000', '1909-11-25', '1967-01-26', 3, 3);
+insert into ARTISTA_ENTITY (nombre, imagen, fecha_Nacimiento, fecha_Fallecimiento, lugar_Nacimiento_id, lugar_Fallecimiento_id) values ('Stephan Fist', 'http://dummyimage.com/203x100.png/ff4444/ffffff', '1905-09-07', '1957-06-18', 7, 7);
+insert into ARTISTA_ENTITY (nombre, imagen, fecha_Nacimiento, fecha_Fallecimiento, lugar_Nacimiento_id, lugar_Fallecimiento_id) values ('Beth Tassell', 'http://dummyimage.com/136x100.png/ff4444/ffffff', '1967-10-29', '1904-07-08', 7, 9);
+insert into ARTISTA_ENTITY (nombre, imagen, fecha_Nacimiento, fecha_Fallecimiento, lugar_Nacimiento_id, lugar_Fallecimiento_id) values ('Shaylah Stickley', 'http://dummyimage.com/225x100.png/ff4444/ffffff', '2015-10-05', '1911-03-03', 9, 11);
+insert into ARTISTA_ENTITY (nombre, imagen, fecha_Nacimiento, fecha_Fallecimiento, lugar_Nacimiento_id, lugar_Fallecimiento_id) values ('Pip Portlock', 'http://dummyimage.com/176x100.png/cc0000/ffffff', '1942-11-06', '1900-10-04', 9, 9);
+insert into ARTISTA_ENTITY (nombre, imagen, fecha_Nacimiento, fecha_Fallecimiento, lugar_Nacimiento_id, lugar_Fallecimiento_id) values ('Radcliffe Bedlington', 'http://dummyimage.com/176x100.png/cc0000/ffffff', '2007-11-08', '1924-09-09', 1, 1);
+insert into ARTISTA_ENTITY (nombre, imagen, fecha_Nacimiento, fecha_Fallecimiento, lugar_Nacimiento_id, lugar_Fallecimiento_id) values ('Nancee Keddie', 'http://dummyimage.com/102x100.png/ff4444/ffffff', '2021-04-12', '1997-09-08', 1, 2);
+insert into ARTISTA_ENTITY (nombre, imagen, fecha_Nacimiento, fecha_Fallecimiento, lugar_Nacimiento_id, lugar_Fallecimiento_id) values ('Devlin Creggan', 'http://dummyimage.com/178x100.png/ff4444/ffffff', '1946-01-14', '2006-05-17', 2, 5);
+insert into ARTISTA_ENTITY (nombre, imagen, fecha_Nacimiento, fecha_Fallecimiento, lugar_Nacimiento_id, lugar_Fallecimiento_id) values ('Jan Deetlefs', 'http://dummyimage.com/162x100.png/5fa2dd/ffffff', '2002-02-18', '1948-10-28', 5, 5);
+
+--MOVIMIENTOS
+insert into MOVIMIENTO_ARTISTICO_ENTITY (nombre, imagen, descripcion) values ('轩硕', 'http://dummyimage.com/228x100.png/dddddd/000000', 'nSN78xSQXMM02VRboQB5ftZgP7XKVINIw7psGUUEvO3fClDA08cJmdrP7UE6XLhQC8ejDS2FhPtgrPk58QrNEuJmJZlIWPnVz47iM3J67mgFkMK4QhF5YFU2');
+insert into MOVIMIENTO_ARTISTICO_ENTITY (nombre, imagen, descripcion) values ('雨婷', 'http://dummyimage.com/211x100.png/5fa2dd/ffffff', '0j3IzXzAz9kzHSRzP8pKXfrHW53gJiHNw1i2AuPsin98kUHhIhkCfQnMeVzeChyBg6g4xSN0G1eS0SD17UzyZsnMUCDYZRkVMGBFWUo9qdurGqvRrmCgYktY');
+insert into MOVIMIENTO_ARTISTICO_ENTITY (nombre, imagen, descripcion) values ('浩成', 'http://dummyimage.com/248x100.png/ff4444/ffffff', 'hiOwgUqLh9J75FrrproRySLttbcFqswcWX0YKC2UV5LQerfTqOZAjJRd7v1toXMBbm6UltZcvSWnaJ2XoVMiUcJIL3KZQeIFy2DV4kisrJ2HYASwvYzAJEJW');
+insert into MOVIMIENTO_ARTISTICO_ENTITY (nombre, imagen, descripcion) values ('秉皓', 'http://dummyimage.com/115x100.png/5fa2dd/ffffff', 'fWk519vKiGDxDyNC3OHS3tbeiLlAHwO9rRIKFJNgscHBGUoSsi3kYsoDQMNXByE0Kxldi62W9KPsA18cjthEOIAfjIAqTAUvQiUU21SMhmguQcJ0JSeNPvSp');
+insert into MOVIMIENTO_ARTISTICO_ENTITY (nombre, imagen, descripcion) values ('依娜', 'http://dummyimage.com/152x100.png/5fa2dd/ffffff', 'sM25FiGAFYM5K6BiVOq46vezB7iLATNiUccmolnSyceaB3uDKU1DZsWheRIxNtdAt2le2ksDz7ZECwKz5H3gp2itwR0pvdRZTVVu1m3cM43oIAtnDBvuM6CS');
+insert into MOVIMIENTO_ARTISTICO_ENTITY (nombre, imagen, descripcion) values ('宸赫', 'http://dummyimage.com/145x100.png/dddddd/000000', 'CspIP8yEyX7XKZRhuMyocXwhBwXYv6KU5UMPBwCP42sJ3YcJcRDu1mdJJCQXeP4mEzL7T0iKxHpw2HU3kkP64zzdzHhmMUH4O4lGw9yIXTE6PvOWsG9LaAqJ');
+insert into MOVIMIENTO_ARTISTICO_ENTITY (nombre, imagen, descripcion) values ('海程', 'http://dummyimage.com/159x100.png/5fa2dd/ffffff', 'OsC2oQrpf6V1BIF1g8THPocinvnQKSTeZOfjeqIUdDbw8CyzJ0g3S2A2xrIOUSzr73NGHjnyOM1lyskPn32h1lRErmJ4JOU0Lkmq2ZkxE9BQXQMiF6mJAgia');
+insert into MOVIMIENTO_ARTISTICO_ENTITY (nombre, imagen, descripcion) values ('泽瀚', 'http://dummyimage.com/204x100.png/dddddd/000000', 'NuQI3jCo2mWWcd6ujB7qDsBo1tm3SpxrJ6sEi1iSEEDDXT6zFwKeeum1HtPYqfRp6dgCV1XbK3Bbb8kLexeZqlt68UoVRkQe1tRvHjO10ArVSyWvrk3eN6pJ');
+insert into MOVIMIENTO_ARTISTICO_ENTITY (nombre, imagen, descripcion) values ('梓彤', 'http://dummyimage.com/147x100.png/ff4444/ffffff', 'pkBpdR0d4viMEGFQYtiTnNiNYhZkOSbn36DWACkCa5j8wd55M8dkCr38q54JUlSrI8YtxmZuAYg3nNhh9X6v9BVimmb9JKmn8kwf4FMurM9NrRuzkM2bTYpF');
+insert into MOVIMIENTO_ARTISTICO_ENTITY (nombre, imagen, descripcion) values ('尹智', 'http://dummyimage.com/148x100.png/5fa2dd/ffffff', 'eMT7HpjaAJDzESNOJXGc5Uid9Yd2jJjmCzdbM2RLHEXuM1l1sKCqGd9i79r8tuRmc0zGYX2IcuiiAjSYWax3YY9PpVN7mbkATmhG7J9kQBf1EAAHGBneCpwY');
+insert into MOVIMIENTO_ARTISTICO_ENTITY (nombre, imagen, descripcion) values ('松源', 'http://dummyimage.com/201x100.png/ff4444/ffffff', 'vMTsfwXfl1fYe9I9qOLooaYbEDgwIDcHknvCwNWEPnBfGMLU78e0tOLZkTkabtBx2j7U4fIqNBLVEhQDIwHz1rQV32qB2zg4wfq3drRVNnOOuCILHGjapJ5c');
+insert into MOVIMIENTO_ARTISTICO_ENTITY (nombre, imagen, descripcion) values ('昕磊', 'http://dummyimage.com/201x100.png/dddddd/000000', 'YXd7P2nbRpvTsOGzdZaBnUjE0mkidtS9PoQIOuHv8nVwkZFapA6QqN25PqFrjbdVtKlNruFxgAplDEbxnA8knGxV7fTPLoj6HdBQX6jaUSUpIqoOeOYGavsb');
+
+--OBRAS
+insert into OBRA_ENTITY (NOMBRE, TIPO, DESCRIPCION, FECHA_PUBLICACION, IMAGEN, ARTISTA_ID) values ('Viva', 'text/plain', '5ZTku4A7tc10RfmYETqFVDlAzPHcxGauv01S4le3bj1wEMk8QcIxO7wibNrrAST9ZR2KTy', '2016-06-12', 'http://dummyimage.com/110x100.png/5fa2dd/ffffff', 3);
+insert into OBRA_ENTITY (NOMBRE, TIPO, DESCRIPCION, FECHA_PUBLICACION, IMAGEN, ARTISTA_ID) values ('Gembucket', 'application/x-excel', 'dF6t0WviG7pJKkn4ouClU5Av8BIilvmzpHKLWo0i5VmYTqbOekK9mFlBNUH9Yq8h89nrtY', '1939-05-27', 'http://dummyimage.com/127x100.png/5fa2dd/ffffff', 2);
+insert into OBRA_ENTITY (NOMBRE, TIPO, DESCRIPCION, FECHA_PUBLICACION, IMAGEN, ARTISTA_ID) values ('Matsoft', 'image/jpeg', 'fETmYASHTPqq2BfXpM8inHQ7oOYo3ay0J5QokXm4gG1Meg7miyH3YkNEcClnwoBVr08rdH', '1912-09-11', 'http://dummyimage.com/166x100.png/cc0000/ffffff', 1);
+insert into OBRA_ENTITY (NOMBRE, TIPO, DESCRIPCION, FECHA_PUBLICACION, IMAGEN, ARTISTA_ID) values ('Prodder', 'application/x-mspowerpoint', '6jtlKpcEiDb3ccbMMQuRM6KOZXWcg5Y5JVgoMl1oR0WuYJrqKg8wdMNkmlKIUo8wTIGvdW', '1954-01-15', 'http://dummyimage.com/115x100.png/cc0000/ffffff', 3);
+insert into OBRA_ENTITY (NOMBRE, TIPO, DESCRIPCION, FECHA_PUBLICACION, IMAGEN, ARTISTA_ID) values ('Opela', 'video/x-mpeg', 'SU6JGOeoIGelkWIif1m4P9kZAdfI0fUwuVmxlwQDUfzNNcArWMP27jJ9txTymfbgNhaOY1', '1962-03-20', 'http://dummyimage.com/111x100.png/ff4444/ffffff', 3);
+insert into OBRA_ENTITY (NOMBRE, TIPO, DESCRIPCION, FECHA_PUBLICACION, IMAGEN, ARTISTA_ID) values ('Zoolab', 'text/plain', 'GHWJB7zDHp5086RnspPNwgBYiXkIzh5ihzkiRR6DArVj74xIkEmXz8PLgnU0jsCsIluxx9', '1952-03-17', 'http://dummyimage.com/235x100.png/dddddd/000000', 3);
+insert into OBRA_ENTITY (NOMBRE, TIPO, DESCRIPCION, FECHA_PUBLICACION, IMAGEN, ARTISTA_ID) values ('Toughjoyfax', 'video/avi', 'LD7rNWxFhScPudWGLAvgP8m4707I52ELDxyy2hSVQvMVSCkt0MBzxOKT6NH92SPG2Fyjx0', '1989-09-15', 'http://dummyimage.com/132x100.png/cc0000/ffffff', 2);
+insert into OBRA_ENTITY (NOMBRE, TIPO, DESCRIPCION, FECHA_PUBLICACION, IMAGEN, ARTISTA_ID) values ('Zathin', 'application/vnd.ms-excel', 'lxr3VEI8msiKKURjKU38ANxv3PYvHpIIBHjnKlE6Wc95d8PpUO5fSC26iXb8p81iFaI7NN', '1911-08-04', 'http://dummyimage.com/123x100.png/dddddd/000000', 1);
+insert into OBRA_ENTITY (NOMBRE, TIPO, DESCRIPCION, FECHA_PUBLICACION, IMAGEN, ARTISTA_ID) values ('Mat Lam Tam', 'application/x-msexcel', 'bOLO5bcDqil2SSYx3Dmff4Urfv0kl3vuPfw6CxcYHeRh1tznfv9lnbYG99uV7eBw2QUMoc', '1975-04-27', 'http://dummyimage.com/153x100.png/ff4444/ffffff', 2);
+insert into OBRA_ENTITY (NOMBRE, TIPO, DESCRIPCION, FECHA_PUBLICACION, IMAGEN, ARTISTA_ID) values ('Holdlamis', 'application/mspowerpoint', 'SVoNT4Mek5cgOIdifmWCL6CfzRSG0W3SSZrFmIFaU4FGWl2P4UvNUxGPbcrgNPHd6ZtQf3', '1944-11-22', 'http://dummyimage.com/142x100.png/5fa2dd/ffffff',3);
+insert into OBRA_ENTITY (NOMBRE, TIPO, DESCRIPCION, FECHA_PUBLICACION, IMAGEN, ARTISTA_ID) values ('Toughjoyfax', 'application/x-troff-msvideo', 'MzX8OYdeHRnoWIXFzdLcKLTB8TodHX0uUM2Jya46XxNiol8oj7rbVlguoSjP9wrZGKpcTl', '1985-09-15', 'http://dummyimage.com/162x100.png/cc0000/ffffff', 3);
+insert into OBRA_ENTITY (NOMBRE, TIPO, DESCRIPCION, FECHA_PUBLICACION, IMAGEN, ARTISTA_ID) values ('It', 'image/pjpeg', 'WOQlnTkgiRVXkj1g6rVMJBhsbJaIxMxulaWkH1Ta6Vol5Uu5ZHfyYsQLmhaPPe4SNYk10p', '1951-01-16', 'http://dummyimage.com/236x100.png/dddddd/000000', 1);
+insert into OBRA_ENTITY (NOMBRE, TIPO, DESCRIPCION, FECHA_PUBLICACION, IMAGEN, ARTISTA_ID) values ('Bamity', 'video/x-mpeg', 'xKy2G6ioeaws6dgiqwl4wWy9z61ThCkgTh7xbnkk4ZHR3l3Y6Artp6lIc8G5e5scfzU1Vz', '1970-03-30', 'http://dummyimage.com/152x100.png/ff4444/ffffff', 3);
+insert into OBRA_ENTITY (NOMBRE, TIPO, DESCRIPCION, FECHA_PUBLICACION, IMAGEN, ARTISTA_ID) values ('Overhold', 'application/x-mspowerpoint', 'Ygtos2jc2ursYNq8wcxwPc3ECEHZGMjNkG9GWBgDzaNOHbAYHfBP4TAun7iL8VH7MghJsk', '1967-07-19', 'http://dummyimage.com/145x100.png/5fa2dd/ffffff', 3);
+insert into OBRA_ENTITY (NOMBRE, TIPO, DESCRIPCION, FECHA_PUBLICACION, IMAGEN, ARTISTA_ID) values ('Andalax', 'application/powerpoint', 'BP1f6k6pi68bdgbuC7Jp8daMTuCKgYsuiolWKSI9DR9JXsqvUJ7iuU5MHAnWjh6eKjatlz', '1986-06-26', 'http://dummyimage.com/196x100.png/ff4444/ffffff', 2);
+insert into OBRA_ENTITY (NOMBRE, TIPO, DESCRIPCION, FECHA_PUBLICACION, IMAGEN, ARTISTA_ID) values ('Bigtax', 'video/x-msvideo', 'eAmRZ7YHwfK4Ew1JHsrxZtOiz36Y989IExRQ5LU8SliXsOIAhchLruClxr5JfrNABX66jL', '1967-07-02', 'http://dummyimage.com/146x100.png/5fa2dd/ffffff', 2);
+
+--MOVIMIENTO-ARTISTA
+insert into ARTISTA_ENTITY_MOVIMIENTOS (ARTISTAS_ID, MOVIMIENTOS_ID) values (1, 5);
+insert into ARTISTA_ENTITY_MOVIMIENTOS (ARTISTAS_ID, MOVIMIENTOS_ID) values (1, 3);
+insert into ARTISTA_ENTITY_MOVIMIENTOS (ARTISTAS_ID, MOVIMIENTOS_ID) values (1, 7);
+insert into ARTISTA_ENTITY_MOVIMIENTOS (ARTISTAS_ID, MOVIMIENTOS_ID) values (2, 2);
+insert into ARTISTA_ENTITY_MOVIMIENTOS (ARTISTAS_ID, MOVIMIENTOS_ID) values (3, 3);
+insert into ARTISTA_ENTITY_MOVIMIENTOS (ARTISTAS_ID, MOVIMIENTOS_ID) values (3, 3);
+insert into ARTISTA_ENTITY_MOVIMIENTOS (ARTISTAS_ID, MOVIMIENTOS_ID) values (3, 3);
+insert into ARTISTA_ENTITY_MOVIMIENTOS (ARTISTAS_ID, MOVIMIENTOS_ID) values (3, 3);
+insert into ARTISTA_ENTITY_MOVIMIENTOS (ARTISTAS_ID, MOVIMIENTOS_ID) values (3, 3);
+
+--MUSEOS
+insert into MUSEO_ENTITY (direccion, img, nombre, total_obras_exhibidas, ubicacion_id) values ('790 Porter Hill', 'http://dummyimage.com/192x100.png/5fa2dd/ffffff', 'Bytecard', 47, 4);
+insert into MUSEO_ENTITY (direccion, img, nombre, total_obras_exhibidas, ubicacion_id) values ('21 Mcguire Alley', 'http://dummyimage.com/124x100.png/dddddd/000000', 'Lotlux', 48, 4);
+insert into MUSEO_ENTITY (direccion, img, nombre, total_obras_exhibidas, ubicacion_id) values ('161 Walton Park', 'http://dummyimage.com/129x100.png/ff4444/ffffff', 'Greenlam', 83, 6);
+insert into MUSEO_ENTITY (direccion, img, nombre, total_obras_exhibidas, ubicacion_id) values ('61 Eliot Way', 'http://dummyimage.com/233x100.png/dddddd/000000', 'Daltfresh', 8, 7);
+insert into MUSEO_ENTITY (direccion, img, nombre, total_obras_exhibidas, ubicacion_id) values ('26048 Miller Court', 'http://dummyimage.com/236x100.png/dddddd/000000', 'Ronstring', 56, 8);
+insert into MUSEO_ENTITY (direccion, img, nombre, total_obras_exhibidas, ubicacion_id) values ('191 Stone Corner Crossing', 'http://dummyimage.com/195x100.png/5fa2dd/ffffff', 'Cardguard', 90, 9);
+insert into MUSEO_ENTITY (direccion, img, nombre, total_obras_exhibidas, ubicacion_id) values ('871 Logan Pass', 'http://dummyimage.com/104x100.png/5fa2dd/ffffff', 'Aerified', 80, 10);
+insert into MUSEO_ENTITY (direccion, img, nombre, total_obras_exhibidas, ubicacion_id) values ('4397 Debra Avenue', 'http://dummyimage.com/120x100.png/5fa2dd/ffffff', 'Redhold', 23, 1);
+
+--MUSEOS-MOVIMIENTO
+insert into MOVIMIENTO_ARTISTICO_ENTITY_MUSEOS  (MUSEOS_ID, MOVIMIENTOS_ID) values (1, 19);
+insert into MOVIMIENTO_ARTISTICO_ENTITY_MUSEOS  (MUSEOS_ID, MOVIMIENTOS_ID) values (12, 18);
+insert into MOVIMIENTO_ARTISTICO_ENTITY_MUSEOS  (MUSEOS_ID, MOVIMIENTOS_ID) values (13, 17);
+insert into MOVIMIENTO_ARTISTICO_ENTITY_MUSEOS  (MUSEOS_ID, MOVIMIENTOS_ID) values (14, 16);
+insert into MOVIMIENTO_ARTISTICO_ENTITY_MUSEOS  (MUSEOS_ID, MOVIMIENTOS_ID) values (10, 14);
+insert into MOVIMIENTO_ARTISTICO_ENTITY_MUSEOS  (MUSEOS_ID, MOVIMIENTOS_ID) values (7, 12);
+insert into MOVIMIENTO_ARTISTICO_ENTITY_MUSEOS  (MUSEOS_ID, MOVIMIENTOS_ID) values (6, 11);
+insert into MOVIMIENTO_ARTISTICO_ENTITY_MUSEOS  (MUSEOS_ID, MOVIMIENTOS_ID) values (5, 19);
+insert into MOVIMIENTO_ARTISTICO_ENTITY_MUSEOS  (MUSEOS_ID, MOVIMIENTOS_ID) values (3, 10);
+
+--ARTISTA-MUSEOS
+insert into ARTISTA_ENTITY_MUSEOS (ARTISTAS_ID, MUSEOS_ID) VALUES (1, 1);
+insert into ARTISTA_ENTITY_MUSEOS (ARTISTAS_ID, MUSEOS_ID) VALUES (1, 2);
+insert into ARTISTA_ENTITY_MUSEOS (ARTISTAS_ID, MUSEOS_ID) VALUES (1, 3);
+insert into ARTISTA_ENTITY_MUSEOS (ARTISTAS_ID, MUSEOS_ID) VALUES (1, 4);
+insert into ARTISTA_ENTITY_MUSEOS (ARTISTAS_ID, MUSEOS_ID) VALUES (1, 1);
+insert into ARTISTA_ENTITY_MUSEOS (ARTISTAS_ID, MUSEOS_ID) VALUES (1, 1);
+insert into ARTISTA_ENTITY_MUSEOS (ARTISTAS_ID, MUSEOS_ID) VALUES (1, 1);
+insert into ARTISTA_ENTITY_MUSEOS (ARTISTAS_ID, MUSEOS_ID) VALUES (1, 1);

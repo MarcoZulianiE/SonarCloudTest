@@ -36,6 +36,10 @@ public class MovimientoArtisticoPaisService
 	@Transactional
 	public MovimientoArtisticoEntity replacePais(Long movimientoId, Long paisId) throws EntityNotFoundException
 	{
+		String a = "a";
+		String b = "b";
+		String c = "c";
+		
 		log.info("Inicia el proceso de actualizar el movimiento "+movimientoId);
 
 		Optional<MovimientoArtisticoEntity> movimientoEntity = movimientoArtisticoRepository.findById(movimientoId);

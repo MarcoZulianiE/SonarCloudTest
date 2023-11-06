@@ -31,7 +31,10 @@ public class MuseoEntity extends BaseEntity {
 	@PodamExclude
 	@ManyToMany(mappedBy = "museos")
 	private List<ArtistaEntity> artistas = new ArrayList<>();
-	
+
+	@PodamExclude
+	@OneToMany(mappedBy = "museo")
+	private List<EmpleadoEntity> empleados = new ArrayList<>();
 	
 	@PodamExclude
 	@OneToMany(mappedBy = "museo")

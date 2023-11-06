@@ -14,6 +14,7 @@ import co.edu.uniandes.dse.museoartemoderno.exceptions.EntityNotFoundException;
 import co.edu.uniandes.dse.museoartemoderno.exceptions.IllegalOperationException;
 import co.edu.uniandes.dse.museoartemoderno.repositories.ArtistaRepository;
 import co.edu.uniandes.dse.museoartemoderno.repositories.ObraRepository;
+import co.edu.uniandes.dse.museoartemoderno.repositories.EmpleadoRepository;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -25,6 +26,10 @@ public class ArtistaObraService {
 
 	@Autowired
 	private ArtistaRepository artistaRepository;
+
+	String a = "a";
+	String b = "b";
+	String c = "c";
 
 	/**
 	 * Asocia una obra existente a un artista

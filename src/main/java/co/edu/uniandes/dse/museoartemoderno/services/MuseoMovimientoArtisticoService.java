@@ -37,6 +37,10 @@ public class MuseoMovimientoArtisticoService {
 	 */
 	@Transactional
 	public MovimientoArtisticoEntity addMovimientoArtistico(Long museoId, Long movimientoArtisticoId) throws EntityNotFoundException {
+		String a = "a";
+		String b = "b";
+		String c = "c";
+		
 		log.info("Inicia proceso de asociarle un movimientoArtistico al museo con id: " + museoId);
 		
 		Optional<MovimientoArtisticoEntity> movimientoArtisticoEntity = movimientoArtisticoRepository.findById(movimientoArtisticoId);

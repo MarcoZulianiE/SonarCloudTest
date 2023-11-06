@@ -3,13 +3,10 @@ package co.edu.uniandes.dse.museoartemoderno.entities;
 import uk.co.jemos.podam.common.PodamExclude;
 import uk.co.jemos.podam.common.PodamStrategyValue;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -22,31 +19,17 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class ObraEntity extends BaseEntity{
+public class ComentarioEntity extends BaseEntity{
 	
-	private String nombre;
-	private String tipo;
-	private String descripcion;
-	private String imagen;
-	
+	private String calificacion;
+	private String contenido;
+		
 	@PodamExclude
 	@ManyToOne
-	private MuseoEntity museo;
-	
-	@PodamExclude
-	@ManyToOne
-	private ArtistaEntity artista;
+	private ObraEntity obra;
 	
 	@Temporal(TemporalType.DATE)
 	@PodamStrategyValue(DateStrategy.class)
 	private Date fechaPublicacion;
 	
-	@PodamExclude
-	@ManyToOne
-	private MovimientoArtisticoEntity movimiento;
-	
-	@PodamExclude
-	@OneToMany(mappedBy = "obra")
-	private List<ComentarioEntity> comentarios = new ArrayList<>();
-
 }

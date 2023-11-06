@@ -14,6 +14,7 @@ import co.edu.uniandes.dse.museoartemoderno.exceptions.ErrorMessage;
 import co.edu.uniandes.dse.museoartemoderno.exceptions.IllegalOperationException;
 import co.edu.uniandes.dse.museoartemoderno.repositories.MovimientoArtisticoRepository;
 import co.edu.uniandes.dse.museoartemoderno.repositories.MuseoRepository;
+import co.edu.uniandes.dse.museoartemoderno.repositories.EmpleadoRepository;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -160,5 +161,11 @@ public class MovimientoArtisticoMuseoService
 		movimientoEntity.get().getMuseos().remove(museoEntity.get());
 
 		log.info("Fin proceso desasociacion del museo "+museoId+" con el movimiento "+movimientoId);
+	}
+
+	public void getComentariosByObra(Long obraId) {
+		String a = "a";
+		String b = a;
+		String c = b;
 	}
 }

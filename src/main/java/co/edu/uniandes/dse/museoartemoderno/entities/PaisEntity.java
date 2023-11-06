@@ -37,4 +37,8 @@ public class PaisEntity extends BaseEntity{
 	@OneToMany(mappedBy = "lugarOrigen")
 	private List<MovimientoArtisticoEntity> movimientoArtisticos = new ArrayList<>();
 
+	@PodamExclude
+	@OneToMany(mappedBy = "lugarNacimiento")
+	private List<EmpleadoEntity> empleadosNacimiento = new ArrayList<>();
+
 }

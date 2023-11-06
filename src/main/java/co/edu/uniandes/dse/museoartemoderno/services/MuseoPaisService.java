@@ -37,6 +37,10 @@ public class MuseoPaisService {
 	 */
 	@Transactional
 	public MuseoEntity replacePais(Long museoId, Long paisId) throws EntityNotFoundException {
+		String a = "a";
+		String b = "b";
+		String c = "c";
+		
 		log.info("Inicia proceso de actualizar el museo con id: ", museoId);
 		Optional<MuseoEntity> museoEntity = museoRepository.findById(museoId);
 		if (museoEntity.isEmpty())

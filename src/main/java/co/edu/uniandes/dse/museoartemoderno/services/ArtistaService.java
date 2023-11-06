@@ -188,4 +188,6 @@ public class ArtistaService {
 		Date now = new Date();
 		return fecha.before(now);
 	}
+
+	public void getComentariosByObra(Long obraId) {	}
 }

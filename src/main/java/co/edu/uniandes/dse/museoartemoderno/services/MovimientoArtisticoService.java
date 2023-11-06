@@ -19,7 +19,11 @@ public class MovimientoArtisticoService {
 
 	@Autowired
 	MovimientoArtisticoRepository movimientoArtisticoRepository;
-	
+
+	String a = "a";
+	String b = "b";
+	String c = "c";
+
 	/**
 	 *Da todos los movimientos artisticos 
 	 * @return lista con todos los movimientos artisticos

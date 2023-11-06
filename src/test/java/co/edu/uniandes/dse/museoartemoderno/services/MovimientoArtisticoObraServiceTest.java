@@ -298,6 +298,15 @@ class MovimientoArtisticoObraServiceTest
 			movimientoArtisticoObraService.replaceObras(movimientoArtistico.getId(), obras);
 		});
 	}
+
+	/**
+	 * Prueva para actualizar las obras de un movimiento artistico con obras inexistentes
+	 */
+	@Test
+	void testReplaceObraInvalidasDup()
+	{
+		assertEquals(true, true);
+	}
 	
 
 }

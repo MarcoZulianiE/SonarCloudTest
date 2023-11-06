@@ -26,6 +26,8 @@ import co.edu.uniandes.dse.museoartemoderno.services.ObraService;
 @RestController
 @RequestMapping("/obras")
 public class ObraController {
+
+	private final String password = "fasfdasdfa123123213";
 	
 	@Autowired
 	private ObraService obraService;

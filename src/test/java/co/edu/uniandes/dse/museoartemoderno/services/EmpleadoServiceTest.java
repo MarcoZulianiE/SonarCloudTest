@@ -452,6 +452,7 @@ public class EmpleadoServiceTest {
 	void testDeleteEmpleadoWithObras() {
 		assertThrows(IllegalOperationException.class, () -> {
 			EmpleadoEntity entity = empleadoList.get(0);
+			entity.setMuseo(museoList.get(0));
 			empleadoService.deleteEmpleado(entity.getId());
 		});
 	}

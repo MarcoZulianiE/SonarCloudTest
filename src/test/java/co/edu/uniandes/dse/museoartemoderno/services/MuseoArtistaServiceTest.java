@@ -345,14 +345,5 @@ public class MuseoArtistaServiceTest {
 		});
 	}
 
-	/**
-	 * Prueva para actualizar las obras de un movimiento artistico con obras inexistentes
-	 */
-	@Test
-	void testReplaceObraInvalidasDup()
-	{
-		assertEquals(true, true);
-	}
-
 }
 

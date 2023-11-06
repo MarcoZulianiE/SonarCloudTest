@@ -133,6 +133,7 @@ public class EmpleadoServiceTest {
 		//Datos que deben ser diferentes a null para crear un empleado
 		newEntity.setFechaNacimiento(fechaList.get(0));
 		newEntity.setLugarNacimiento(paisList.get(0));
+		newEntity.setMuseo(museoList.get(0));
 		EmpleadoEntity result = empleadoService.createEmpleado(newEntity);
 		assertNotNull(result);
 
